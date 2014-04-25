@@ -47,7 +47,7 @@
       panoramaOptions = {
         position: new google.maps.LatLng( $context.data('latitude'), $context.data('longitude') ),
         disableDefaultUI: true,
-        scrollwheel: true,
+        scrollwheel: false,
         pov: {
           heading: 165,
           pitch: 0
