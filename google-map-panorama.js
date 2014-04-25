@@ -68,6 +68,7 @@
     }
 
     function showSpinner() {
+      if (!$spinner) return;
       // jQuery's fadeOut might add some dirty inline CSS...
       $spinner.css({
         'display': 'block',
@@ -79,6 +80,7 @@
     }
 
     function hideSpinner() {
+      if (!$spinner) return;
       $spinner.fadeOut(300, function() {
         $spinner.addClass( CLASS_SPINNER_INACTIVE );
       });
