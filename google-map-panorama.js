@@ -36,6 +36,7 @@
 
     var CLASSES_FALLBACK = "bg-cover bg-color--blank";
     var CLASS_SPINNER_INACTIVE = "spinner--inactive";
+    var CLASS_MAP_LOADED = "map-loaded";
 
     var SELECTOR_SPINNER = '.spinner';
 
@@ -58,6 +59,8 @@
       pano = new google.maps.StreetViewPanorama( context, panoramaOptions );
       pano.setVisible(true);
       hideSpinner();
+      
+      $context.addClass( CLASS_MAP_LOADED );
 
     }
 
