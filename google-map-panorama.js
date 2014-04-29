@@ -31,8 +31,10 @@
     var watcher = null;
     var pano = null;
     var panoramaOptions = {};
+    var isDisabledOnTouch = false;
 
     var DATA_FALLBACK = "fallback";
+    var DATA_TOUCH_DISABLED = "is-touch-disabled";
 
     var CLASSES_FALLBACK = "bg-cover bg-color--blank";
     var CLASS_SPINNER_INACTIVE = "spinner--inactive";
@@ -99,9 +101,10 @@
     api.init = function () {
       // Hello spinner
       $spinner = $context.find( SELECTOR_SPINNER );
+      isDisabledOnTouch = $context.data( DATA_TOUCH_DISABLED ) || false;
 
       // No maps on mobile. Saves bandwidth and awkwardness scrolling.
-      if (Modernizr.touch || navigator.msMaxTouchPoints) {
+      if (isDisabledOnTouch && (Modernizr.touch || navigator.msMaxTouchPoints)) {
         setFallback( $context.data( DATA_FALLBACK ) );
       } else {
         showSpinner();
