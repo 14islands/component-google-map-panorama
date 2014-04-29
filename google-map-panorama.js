@@ -40,7 +40,7 @@
 
     var SELECTOR_SPINNER = '.spinner';
     
-    var LOADED_CLASS_TIMEOUT = 500;
+    var LOADED_CLASS_TIMEOUT = 700;
 
     //
     // Callbacks
