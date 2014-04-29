@@ -39,6 +39,8 @@
     var CLASS_MAP_LOADED = "map-loaded";
 
     var SELECTOR_SPINNER = '.spinner';
+    
+    var LOADED_CLASS_TIMEOUT = 500;
 
     //
     // Callbacks
@@ -60,7 +62,9 @@
       pano.setVisible(true);
       hideSpinner();
       
-      $context.addClass( CLASS_MAP_LOADED );
+      setTimeout(function() {
+        $context.addClass( CLASS_MAP_LOADED );
+      }, LOADED_CLASS_TIMEOUT);
 
     }
 
